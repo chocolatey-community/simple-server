@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="CUSTOM POST NUGETPREPARE" default="go">
+  <!-- Project UppercuT - http://projectuppercut.org -->
+  <property name="build.config.settings" value="__NONE__" overwrite="false" />
+  <include buildfile="${build.config.settings}" if="${file::exists(build.config.settings)}" />
+  <property name="path.separator" value="${string::trim(path::combine(' ', ' '))}" />
+  <property name="dirs.current" value="${directory::get-parent-directory(project::get-buildfile-path())}" />
+  <property name="path.to.toplevel" value=".." />
+  <property name="folder.code_drop" value="code_drop" overwrite="false" />
+  <property name="dirs.drop" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.code_drop}" overwrite="false" />
+  <property name="dirs.drop" value="${path::get-full-path(dirs.drop)}" />
+  <property name="folder.nuget" value="nuget" overwrite="false" />
+  <property name="dirs.drop.nuget" value="${dirs.drop}${path.separator}${folder.nuget}" overwrite="false" />
+  <property name="project.name" value="__SOLUTION_NAME_WITHOUT_SLN_EXTENSION__" overwrite="false" />
+  <property name="version.use_semanticversioning" value="false" overwrite="false" />
+  <property name="version.major" value="1" overwrite="false" />
+  <property name="version.minor" value="0" overwrite="false" />
+  <property name="version.patch" value="0" overwrite="false" />
+  <property name="version.build" value="0" overwrite="false" />
+  <property name="version.revision" value="0" overwrite="false" />
+  <property name="assembly.version.full" value="${version.major}.${version.minor}.${version.build}.${version.revision}" />
+  <property name="assembly.version.full" value="${version.major}.${version.minor}.${version.patch}.0"  if="${version.use_semanticversioning}" />
+  
+  <target name="go" depends="prep_nuget, remove_docs" />
+  
+  <target name="prep_nuget">
+    <echo level="Warning" message="Deleting ${dirs.drop.nuget}\lib" />
+    <delete dir="${dirs.drop.nuget}\lib" />
+    
+    <property name="dir.drop.choco_server" value="${dirs.drop}${path.separator}_PublishedWebSites${path.separator}${project.name}" />
+    <property name="dirs.drop.nuget.choco_server" value="${dirs.drop.nuget}${path.separator}tools${path.separator}chocolatey.server" />
+    <echo level="Warning" message="Packaging website to ${dirs.drop.nuget}${path.separator}tools\chocolatey.server." />
+    
+    <copy todir="${dirs.drop.nuget.choco_server}">
+      <fileset basedir="${dir.drop.choco_server}">
+        <exclude name="**${path.separator}*.template" />
+        <exclude name="**/bin/*.xml" />
+        <exclude name="**/bin/*.pdb" />
+        <include name="**/*.*" />
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="remove_docs">
+    <echo level="Warning" message="Removing unnecesary documents from '${dirs.drop.nuget}\docs'" />
+    <delete dir="${dirs.drop.nuget}\docs" />
+  </target>
+</project>

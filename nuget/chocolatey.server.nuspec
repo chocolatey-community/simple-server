@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>chocolatey.server</id>
+    <title>Chocolatey Server (Simple)</title>
+    <version>0.0.0</version>
+    <authors>Rob Reynolds</authors>
+    <owners>Rob Reynolds</owners>
+    <summary>Chocolatey Server is a simple OData feed built on top of NuGet.Server.</summary>
+    <description>Chocolatey Server is a simple OData feed built on top of NuGet.Server.
+    
+Chocolatey Server builds on NuGet.Server with a few minor adjustments:
+
+ * This is a packaged site, ready to deploy.
+ * The apikey is already set.
+ * There is more helpful information on the site when accessing locally:
+   * There is a link to the Elmah logs
+   * The api key is given on the page.
+ * The location of packages defaults to a more secure location.
+
+</description>
+    <releaseNotes>
+v0.1.1:
+ 
+ * Small fix to not do anything with respect to making changes.
+ * Cleaned up files
+
+v0.1.0:
+
+ * Initial Release
+ </releaseNotes>
+    <projectUrl>http://chocolatey.org</projectUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>nuget odata iis repository chocolatey</tags>
+    <iconUrl>https://github.com/chocolatey/chocolatey/raw/master/docs/logo/chocolateyicon.gif</iconUrl>
+    <dependencies>
+      <dependency id="DotNet4.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

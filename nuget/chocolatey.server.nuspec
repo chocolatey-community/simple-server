@@ -20,12 +20,17 @@ Chocolatey Server builds on NuGet.Server with a few minor adjustments:
 
 </description>
     <releaseNotes>
-v0.1.1:
+### v0.1.2
+
+* Package size allows for 2GB
+* Uses same NuGet enhancements that Chocolatey uses.
+
+### v0.1.1
  
  * Small fix to not do anything with respect to making changes.
  * Cleaned up files
 
-v0.1.0:
+### v0.1.0:
 
  * Initial Release
  </releaseNotes>

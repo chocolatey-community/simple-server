@@ -52,6 +52,9 @@
             <p style="font-size:1.1em">
                 View your <a href="<%= VirtualPathUtility.ToAbsolute("~/elmah.axd") %>">elmah logs</a>.
             </p>
+            <p style="font-size:1.1em">
+                Package size limit is set to a default of 2GB, but is adjustable. See maxAllowedContentLength in the web.config.
+            </p>
         </fieldset>
         <% } %>
         <h5>Based on NuGet.Server v<%= typeof(NuGet.Server.DataServices.Package).Assembly.GetName().Version %></h5>

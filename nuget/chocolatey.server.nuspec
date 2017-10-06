@@ -31,6 +31,12 @@ Chocolatey Server builds on NuGet.Server with a few minor adjustments:
    * There is a link to the Elmah logs
    * The api key is given on the page.
  * The location of packages defaults to a more secure location.
+ 
+### Links
+
+* Setup - https://chocolatey.org/docs/how-to-set-up-chocolatey-server
+* Source Code - https://github.com/chocolatey/simple-server/
+* Issues/Requests - https://github.com/chocolatey/simple-server/issues
 
 </description>
     <releaseNotes>

@@ -1,11 +1,25 @@
 ﻿<?xml version="1.0"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>chocolatey.server</id>
-    <title>Chocolatey Server (Simple)</title>
     <version>0.0.0</version>
-    <authors>Rob Reynolds</authors>
     <owners>Rob Reynolds</owners>
+    <!-- <packageSourceUrl>https://github.com/chocolatey/simple-server</packageSourceUrl>-->
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>Chocolatey Server (Simple)</title>
+    <authors>Rob Reynolds</authors>
+    <projectUrl>https://github.com/chocolatey/simple-server/</projectUrl>
+    <iconUrl>https://github.com/chocolatey/choco/raw/master/docs/logo/chocolateyicon.gif</iconUrl>
+    <copyright>2017 Chocolatey Software, Inc. 2014 - 2017 RealDimensions Software, LLC</copyright>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<projectSourceUrl>https://github.com/chocolatey/simple-server/</projectSourceUrl>-->
+    <!--<docsUrl>https://chocolatey.org/docs/how-to-set-up-chocolatey-server</docsUrl>-->
+    <!--<bugTrackerUrl>https://github.com/chocolatey/simple-server/issues</bugTrackerUrl>-->
+    <tags>nuget odata iis repository chocolatey simple-server simple.server</tags>
     <summary>Chocolatey Server is a simple OData feed built on top of NuGet.Server.</summary>
     <description>Chocolatey Server is a simple OData feed built on top of NuGet.Server.
     
@@ -34,11 +48,7 @@ Chocolatey Server builds on NuGet.Server with a few minor adjustments:
 
  * Initial Release
  </releaseNotes>
-    <projectUrl>http://chocolatey.org</projectUrl>
-    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <tags>nuget odata iis repository chocolatey</tags>
-    <iconUrl>https://github.com/chocolatey/choco/raw/master/docs/logo/chocolateyicon.gif</iconUrl>
+    <!-- ============================== -->
     <dependencies>
       <dependency id="DotNet4.0" />
     </dependencies>

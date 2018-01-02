@@ -96,6 +96,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SolutionVersion.cs">
+      <Link>Properties\SolutionVersion.cs</Link>
+    </Compile>
     <Compile Include="DataServices\Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

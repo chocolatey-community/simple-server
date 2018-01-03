@@ -132,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\chocolatey.png" />
-    <Content Include="DataServices\Packages.svc" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="App_Data\Packages\Readme.txt" />
@@ -142,7 +141,6 @@
     <Compile Include="..\SolutionVersion.cs">
       <Link>Properties\SolutionVersion.cs</Link>
     </Compile>
-    <Compile Include="DataServices\Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

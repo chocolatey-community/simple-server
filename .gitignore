@@ -6,6 +6,7 @@ code_drop
 obj
 src/packages
 src/SimpleChocolateyServer/App_Data/Logs
+.vs
 
 *.suo
 *.sln.docstates

@@ -26,7 +26,7 @@
   <property name="sign.project_with_key" value="false" overwrite="false" />
 
   <!-- Build Features Overrides -->
-  <property name="microsoft.framework" value="net-4.0" overwrite="false" />
+  <property name="microsoft.framework" value="net-4.6.1" overwrite="false" />
   <property name="test.framework" value="none" overwrite="false" />
   <property name="source_control_type" value="git" overwrite="false" />
   <property name="cover.framework" value="none" overwrite="false" />

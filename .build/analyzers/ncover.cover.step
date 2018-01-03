@@ -113,6 +113,6 @@
 
   <target name="open_results">
     <echo level="Warning" message="Opening results - ${path::get-full-path(dirs.codecoverage_results) + path.separator + file.html.code_coverage_results}" />
-    <results display="${path::get-full-path(dirs.codecoverage_results) + path.separator + file.html.code_coverage_results}" />
+    <!-- <results display="${path::get-full-path(dirs.codecoverage_results) + path.separator + file.html.code_coverage_results}" /> -->
   </target>
 </project>

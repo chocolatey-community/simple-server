@@ -43,7 +43,7 @@
 
   <target name="open_results">
     <echo level="Warning" message="Opening results - ${path::get-full-path(dirs.nitriq_results) + path.separator + file.html.nitriq_results}" />
-    <results display="${path::get-full-path(dirs.nitriq_results) + path.separator + file.html.nitriq_results}" />
+    <!-- <results display="${path::get-full-path(dirs.nitriq_results) + path.separator + file.html.nitriq_results}" /> -->
   </target>
 
 </project>

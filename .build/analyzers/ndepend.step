@@ -40,7 +40,7 @@
 
   <target name="open_results">
     <echo level="Warning" message="Opening results - ${path::get-full-path(dirs.ndepend_results) + path.separator + 'NDependReport.html'}" />
-    <results display="${path::get-full-path(dirs.ndepend_results) + path.separator + 'NDependReport.html'}" />
+    <!-- <results display="${path::get-full-path(dirs.ndepend_results) + path.separator + 'NDependReport.html'}" /> -->
   </target>
 
 </project>

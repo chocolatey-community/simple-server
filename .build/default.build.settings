@@ -21,7 +21,8 @@
   <property name="folder.build_scripts_custom" value="build.custom" overwrite="false" />
   <property name="dirs.build_scripts_custom" value="${dirs.current}${path.separator}${folder.build_scripts_custom}" overwrite="false" />
 
-  <include buildfile="${dirs.build_scripts}${path.separator}csharp.functions" />
+  <!-- Fails on namespace imports with latest -->
+  <!--<include buildfile="${dirs.build_scripts}${path.separator}csharp.functions" />-->
 
   <property name="folder.code_build" value="build_output" overwrite="false" />
   <property name="dirs.code_build" value="${dirs.current}${path.separator}${folder.code_build}" overwrite="false" />

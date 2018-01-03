@@ -80,7 +80,7 @@
 
   <target name="open_results">
     <echo level="Warning" message="Opening results - ${path::get-full-path(dirs.test_results) + path.separator + file.test_results + '.html'}" />
-    <results display="${path::get-full-path(dirs.test_results) + path.separator + file.test_results + '.html'}" />
+    <!-- <results display="${path::get-full-path(dirs.test_results) + path.separator + file.test_results + '.html'}" /> -->
   </target>
 
 </project>

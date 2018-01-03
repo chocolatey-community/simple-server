@@ -78,7 +78,7 @@
 
   <target name="open_results">
     <echo level="Warning" message="Opening results - ${path::get-full-path(dirs.moma_results) + path.separator + file.moma_results}."/>
-    <results display="${path::get-full-path(dirs.moma_results) + path.separator + file.moma_results}" />
+    <!-- <results display="${path::get-full-path(dirs.moma_results) + path.separator + file.moma_results}" /> -->
   </target>
 
 </project>

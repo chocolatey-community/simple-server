@@ -86,6 +86,6 @@
 
   <target name="open_results">
     <echo message="Opening results - ${path::get-full-path(dirs.metrics_results) + path.separator + file.metrics_results}."/>
-    <results display="${path::get-full-path(dirs.metrics_results) + path.separator + file.metrics_results}" />
+    <!-- <results display="${path::get-full-path(dirs.metrics_results) + path.separator + file.metrics_results}" /> -->
   </target>
 </project>

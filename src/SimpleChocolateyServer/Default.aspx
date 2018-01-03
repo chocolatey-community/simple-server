@@ -10,7 +10,7 @@
 </head>
 <body>
     <div>
-        <h2>You are running a Simple Chocolatey Package Repository</h2>
+        <h2>You are running a Simple Chocolatey Package Repository v<%= typeof(ForReference).Assembly.GetName().Version %></h2>
         <img src="<%= VirtualPathUtility.ToAbsolute("~/Content/images/chocolatey.png") %>" width="80" height="80" alt="chocolatey logo" />
         
         <p>

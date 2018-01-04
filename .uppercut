@@ -51,5 +51,4 @@
   <property name="app.coveralls" value="${dirs.current}${path.separator}src${path.separator}packages${path.separator}coveralls.io.1.1.86${path.separator}tools${path.separator}coveralls.net.exe" overwrite="false" />
   <property name="app.strongname" value="C:${path.separator}Program Files${path.separator}Microsoft SDKs${path.separator}Windows${path.separator}v7.0A${path.separator}Bin${path.separator}sn.exe" />
   <property name="app.strongname" value="C:${path.separator}Program Files (x86)${path.separator}Microsoft SDKs${path.separator}Windows${path.separator}v7.0A${path.separator}Bin${path.separator}sn.exe" if="${not file::exists(app.strongname)}" />
-
 </project>

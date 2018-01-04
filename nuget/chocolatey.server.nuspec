@@ -75,7 +75,7 @@ seconds (20 minutes).
  </releaseNotes>
     <!-- ============================== -->
     <dependencies>
-      <dependency id="DotNet4.0" />
+      <dependency id="dotnet4.6" />
     </dependencies>
   </metadata>
   <files>

@@ -5,6 +5,20 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleChocolateyServer", "SimpleChocolateyServer\SimpleChocolateyServer.csproj", "{6F35E9E2-81D7-40B1-BA9E-1A2E8496DD6C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{DD249155-AE02-45DA-B6F4-8A404DD31646}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget\chocolatey.server.nuspec = ..\nuget\chocolatey.server.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{1AEC81F3-E588-4D3C-B049-294D710CC26C}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget\tools\chocolateybeforemodify.ps1 = ..\nuget\tools\chocolateybeforemodify.ps1
+		..\nuget\tools\chocolateyInstall.ps1 = ..\nuget\tools\chocolateyInstall.ps1
+		..\nuget\tools\chocolateyuninstall.ps1 = ..\nuget\tools\chocolateyuninstall.ps1
+		..\nuget\tools\LICENSE.txt = ..\nuget\tools\LICENSE.txt
+		..\nuget\tools\VERIFICATION.txt = ..\nuget\tools\VERIFICATION.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AEC81F3-E588-4D3C-B049-294D710CC26C} = {DD249155-AE02-45DA-B6F4-8A404DD31646}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40A1A406-07DE-49A5-B661-DD0F4C4A326E}

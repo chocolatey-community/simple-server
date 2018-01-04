@@ -1,38 +1,44 @@
 # Chocolatey Simple Server CHANGELOG
 
-## 0.2.0 (unreleased)
+## 0.2.0 (January 4, 2018)
 ### BREAKING CHANGES
- * Now requires .NET Framework 4.6.x - [#14](https://github.com/chocolatey/simple-server/issues/14)
+ * Require .NET Framework 4.6.x - [#14](https://github.com/chocolatey/simple-server/issues/14)
 
 To use the same caching techniques mentioned below in [#10](https://github.com/chocolatey/simple-server/issues/10), we needed to upgrade to the same version of the .NET Framework that was being used by NuGet.Server. That means you need to take some extra steps of ensuring that your ASP.NET has .NET 4.6+ registered so that files are served properly.
 
 ### FEATURES
- * Use same caching techniques as NuGet.Server v3.4.x+ [#10](https://github.com/chocolatey/simple-server/issues/10)
+ * Use same caching techniques as NuGet.Server v3x+ (NuGet v3.4.x+) - [#10](https://github.com/chocolatey/simple-server/issues/10)
 
 No longer time out when serving up large-sized packages. This is accomplished by pulling the items out of packages ahead of time that are necessary when serving information.
 
+### BUG FIXES
+ * Fix - Uploading large package results in System.OutOfMemoryException - [#15](https://github.com/chocolatey/simple-server/issues/15)
+
 ### IMPROVEMENTS
  * Show version of Chocolatey Server on site - [#12](https://github.com/chocolatey/simple-server/issues/12)
+ * Manage upgrades and uninstalls gracefully - [#13](https://github.com/chocolatey/simple-server/issues/13)
+
 
 ## 0.1.4 (January 2, 2018)
 ### BUG FIXES
- * Fix - Turning on basic auth in web.config doesn't allow pushing packages
+ * Fix - Turning on basic auth in web.config doesn't allow pushing packages - [#6](https://github.com/chocolatey/simple-server/issues/6)
 
 ### IMPROVEMENTS
  * Use Chocolatey icon for favicon
 
+
 ## 0.1.3 (October 6, 2017)
 ### FEATURES
- * Allow specifying Basic Authentication credentials directly from the web.config file.
+ * Allow specifying Basic Authentication credentials directly from the web.config file - [#5](https://github.com/chocolatey/simple-server/issues/5)
 
 ### IMPROVEMENTS
  * Increase timeout for pushing packages from the default of 110 seconds to 1200
-seconds (20 minutes).
+seconds (20 minutes) - [#3](https://github.com/chocolatey/simple-server/issues/3)
 
 
 ## 0.1.2 (November 17, 2016)
 ### IMPROVEMENTS
- * Package size allows for 2GB
+ * Package size allows for 2GB - [#1](https://github.com/chocolatey/simple-server/issues/1)
  * Uses same NuGet enhancements that Chocolatey uses.
 
 

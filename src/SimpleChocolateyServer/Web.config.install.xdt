@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <configSections xdt:Transform="InsertIfMissing">
+    <section name="httpAuth" type="HttpAuth.Configuration.HttpAuthSection,HttpAuthenticationModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+  </configSections>
+  <system.web>
+    <compilation debug="false" targetFramework="4.6" xdt:Transform="SetAttributes(targetFramework)" />
+    <httpRuntime targetFramework="4.6" xdt:Transform="SetAttributes(targetFramework,executionTimeout,maxRequestLength)" executionTimeout="1200" maxRequestLength="2147482548" />
+    <authentication mode="None" xdt:Transform="InsertIfMissing"/>
+    <httpModules xdt:Transform="InsertIfMissing">
+      <add name="HttpAuthenticationModule" type="HttpAuth.HttpAuthenticationModule, HttpAuthenticationModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+    </httpModules>
+  </system.web>
+  <system.webServer>
+    <handlers xdt:Transform="InsertIfMissing">
+      <remove name="ExtensionlessUrlHandler-Integrated-4.0" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+      <remove name="OPTIONSVerbHandler" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+      <remove name="TRACEVerbHandler" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+      <remove name="WebDAV" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+    </handlers>
+    <staticContent xdt:Transform="InsertIfMissing">
+      <mimeMap fileExtension=".nupkg" mimeType="application/zip" xdt:Locator="Match(fileExtension)" xdt:Transform="InsertIfMissing" />
+    </staticContent>
+    <modules runAllManagedModulesForAllRequests="true" xdt:Transform="InsertIfMissing">
+      <remove name="WebDAVModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+    </modules>
+    <security xdt:Transform="InsertIfMissing">
+      <requestFiltering xdt:Transform="InsertIfMissing">
+        <requestLimits maxAllowedContentLength="2147482548" xdt:Transform="InsertIfMissing" />
+      </requestFiltering>
+    </security>
+  </system.webServer>
+  <location path="api/v2/package" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing">
+    <system.web>
+      <authorization>
+        <allow users="?" />
+      </authorization>
+    </system.web>
+  </location>
+  <httpAuth mode="Basic" realm="Chocolatey Simple Server" xdt:Transform="InsertIfMissing">
+    <!-- To turn this on, you need to deny unknown users to the chocolatey path. See authorization in the system.web section below -->
+    <credentials source="Inline" passwordFormat="Clear">
+      <user name="choco" password="rocks" />
+      <!-- add users here -->
+    </credentials>
+	<!-- 
+		HttpAuth Module
+		Mode - {None|Basic|Digest}
+		Realm - {Plain|Secret|<Pick some value>}
+		Source - {Inline|FormsAuthentication|MembershipProvider}
+		PasswordFormat - {Clear|SHA1|MD5|MD5Digest} - MD5Digest only with Digest mode
+		  [ <user name="user name" password="password" />
+			[<user name="..." password="..."/>]
+			[...]
+		  ] 
+		</credentials>
+	  </httpAuth>
+	-->
+  </httpAuth>
+  <location path="chocolatey" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing" >
+    <system.web>
+      <authorization>
+        <!-- change this to deny to turn on basic auth -->
+        <allow users="?" />
+      </authorization>
+    </system.web>
+  </location>
+  <appSettings>
+    <add key="ignoreSymbolsPackages" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="enableFileSystemMonitoring" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="enableSimpleMembership" value="false" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+  </appSettings>
+  <runtime xdt:Transform="InsertIfMissing">
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1" xdt:Transform="InsertIfMissing">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-10.0.0.0" newVersion="10.0.0.0" xdt:Transform="InsertIfMissing" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Http" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.3.0" newVersion="5.2.3.0" xdt:Transform="InsertIfMissing" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Net.Http.Formatting" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.3.0" newVersion="5.2.3.0" xdt:Transform="InsertIfMissing" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Data.Edm" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.8.3.0" newVersion="5.8.3.0" xdt:Transform="InsertIfMissing" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Data.OData" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.8.3.0" newVersion="5.8.3.0" xdt:Transform="InsertIfMissing" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Spatial" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.8.3.0" newVersion="5.8.3.0" xdt:Transform="InsertIfMissing" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <system.codedom xdt:Transform="InsertIfMissing" />
+  <system.codedom xdt:Transform="Remove" />
+</configuration>

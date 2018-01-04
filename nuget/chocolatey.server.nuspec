@@ -13,7 +13,7 @@
     <authors>Rob Reynolds</authors>
     <projectUrl>https://github.com/chocolatey/simple-server/</projectUrl>
     <iconUrl>https://github.com/chocolatey/choco/raw/master/docs/logo/chocolateyicon.gif</iconUrl>
-    <copyright>2017 Chocolatey Software, Inc. 2014 - 2017 RealDimensions Software, LLC</copyright>
+    <copyright>2017 - 2018 Chocolatey Software, Inc. 2014 - 2017 RealDimensions Software, LLC</copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--<projectSourceUrl>https://github.com/chocolatey/simple-server/</projectSourceUrl>-->

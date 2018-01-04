@@ -11,17 +11,17 @@
   <property name="build.step.name" value="${project::get-name()}" />
   <property name="build.step.path" value="${project::get-buildfile-path()}" />
   <!-- build step customizations below this -->
-  
+
   <target name="go" depends="prep_nuget, remove_docs" />
-  
+
   <target name="prep_nuget">
     <echo level="Warning" message="Deleting ${dirs.drop.nuget}\lib" />
     <delete dir="${dirs.drop.nuget}\lib" />
-    
+
     <property name="dir.drop.choco_server" value="${dirs.drop}${path.separator}_PublishedWebSites${path.separator}${project.name}" />
     <property name="dirs.drop.nuget.choco_server" value="${dirs.drop.nuget}${path.separator}tools${path.separator}chocolatey.server" />
     <echo level="Warning" message="Packaging website to ${dirs.drop.nuget}${path.separator}tools\chocolatey.server." />
-    
+
     <copy todir="${dirs.drop.nuget.choco_server}">
       <fileset basedir="${dir.drop.choco_server}">
         <exclude name="**${path.separator}*.template" />
@@ -31,7 +31,7 @@
       </fileset>
     </copy>
   </target>
-  
+
   <target name="remove_docs">
     <echo level="Warning" message="Removing unnecesary documents from '${dirs.drop.nuget}\docs'" />
     <delete dir="${dirs.drop.nuget}\docs" />

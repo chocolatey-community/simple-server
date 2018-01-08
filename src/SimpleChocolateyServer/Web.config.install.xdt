@@ -10,6 +10,7 @@
     <httpModules xdt:Transform="InsertIfMissing">
       <add name="HttpAuthenticationModule" type="HttpAuth.HttpAuthenticationModule, HttpAuthenticationModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
     </httpModules>
+	<customErrors mode="RemoteOnly" xdt:Transform="InsertIfMissing" />
   </system.web>
   <system.webServer>
     <handlers xdt:Transform="InsertIfMissing">

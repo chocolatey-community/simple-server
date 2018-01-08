@@ -1,5 +1,10 @@
 # Chocolatey Simple Server CHANGELOG
 
+## 0.2.1 (January 8, 2018)
+### BUG FIXES
+ * Fix - New installation doesn't copy subfolders and files - [#18](https://github.com/chocolatey/simple-server/issues/18)
+
+
 ## 0.2.0 (January 4, 2018)
 ### BREAKING CHANGES
  * Require .NET Framework 4.6.x - [#14](https://github.com/chocolatey/simple-server/issues/14)

@@ -43,7 +43,7 @@ if ($osVersion -ge [Version]'6.2') #8/2012+
 If (Test-Path -Path $existingWebConfig) {
   Write-Output "Copying existing web.config to package directory to allow proper updates"
   Copy-Item $existingWebConfig $packageWebConfig -Force -ErrorAction SilentlyContinue
-  Write-Warning "Due to transforms happening AFTER this script completes, you will likely need to manually migrate '$packageWebConfig' back to '$existingWebConfig' once upgrade is complete."
+  Write-Warning "Due to transforms happening AFTER this script completes, you will likely need to manually migrate '$packageWebConfig' back to '$existingWebConfig' once upgrade is complete. Also check the config file to make sure that it was not malformed by the XDT transform."
 }
 
 if (! (Test-Path -Path $webInstallDir)) {

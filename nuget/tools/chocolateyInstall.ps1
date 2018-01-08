@@ -47,6 +47,7 @@ If (Test-Path -Path $existingWebConfig) {
 }
 
 if (! (Test-Path -Path $webInstallDir)) {
+  New-Item $webInstallDir -ItemType Directory -Force | Out-Null
   Copy-Item $webToolsDir\* $webInstallDir -Recurse -Force
 } else {
   try {

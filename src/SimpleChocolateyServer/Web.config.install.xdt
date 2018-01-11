@@ -28,6 +28,11 @@
       <add name="HttpAuthenticationModule" type="HttpAuth.HttpAuthenticationModule, HttpAuthenticationModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
     </httpModules>
 	<customErrors mode="RemoteOnly" xdt:Transform="InsertIfMissing" />
+	<authorization xdt:Transform="InsertIfMissing">
+      <allow users="?" verbs="PUT, POST" xdt:Transform="InsertIfMissing" />
+      <!-- change "allow" below to "deny" to turn on basic auth -->
+      <allow users="?" />
+    </authorization>
   </system.web>
   <system.webServer>
     <handlers xdt:Transform="InsertIfMissing">
@@ -49,21 +54,10 @@
       </requestFiltering>
     </security>
   </system.webServer>
-  <location path="api/v2/package" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing">
-    <system.web>
-      <authorization>
-        <allow users="?" />
-      </authorization>
-    </system.web>
-  </location>
-  <location path="chocolatey" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing" >
-    <system.web>
-      <authorization>
-        <!-- change this to deny to turn on basic auth -->
-        <allow users="?" />
-      </authorization>
-    </system.web>
-  </location>
+  <location path="api/v2/package" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing" />
+  <location path="api/v2/package" xdt:Locator="Match(path)" xdt:Transform="Remove" />
+  <location path="chocolatey" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing" />
+  <location path="chocolatey" xdt:Locator="Match(path)" xdt:Transform="Remove" />
   <appSettings>
     <add key="ignoreSymbolsPackages" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
     <add key="enableFileSystemMonitoring" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />

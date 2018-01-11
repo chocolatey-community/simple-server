@@ -3,6 +3,12 @@
   <configSections xdt:Transform="InsertIfMissing">
     <section name="httpAuth" type="HttpAuth.Configuration.HttpAuthSection,HttpAuthenticationModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
   </configSections>
+  <httpAuth mode="Basic" realm="Chocolatey Simple Server" xdt:Transform="InsertIfMissing">
+    <credentials source="Inline" passwordFormat="Clear">
+      <user name="choco" password="rocks" />
+      <!-- add users here -->
+    </credentials>
+  </httpAuth>
   <system.web>
     <compilation debug="false" targetFramework="4.6" xdt:Transform="SetAttributes(targetFramework)" />
     <httpRuntime targetFramework="4.6" xdt:Transform="SetAttributes(targetFramework,executionTimeout,maxRequestLength)" executionTimeout="1200" maxRequestLength="2147482548" />
@@ -39,26 +45,6 @@
       </authorization>
     </system.web>
   </location>
-  <httpAuth mode="Basic" realm="Chocolatey Simple Server" xdt:Transform="InsertIfMissing">
-    <!-- To turn this on, you need to deny unknown users to the chocolatey path. See authorization in the system.web section below -->
-    <credentials source="Inline" passwordFormat="Clear">
-      <user name="choco" password="rocks" />
-      <!-- add users here -->
-    </credentials>
-	<!-- 
-		HttpAuth Module
-		Mode - {None|Basic|Digest}
-		Realm - {Plain|Secret|<Pick some value>}
-		Source - {Inline|FormsAuthentication|MembershipProvider}
-		PasswordFormat - {Clear|SHA1|MD5|MD5Digest} - MD5Digest only with Digest mode
-		  [ <user name="user name" password="password" />
-			[<user name="..." password="..."/>]
-			[...]
-		  ] 
-		</credentials>
-	  </httpAuth>
-	-->
-  </httpAuth>
   <location path="chocolatey" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing" >
     <system.web>
       <authorization>

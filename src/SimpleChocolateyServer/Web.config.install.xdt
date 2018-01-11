@@ -4,7 +4,18 @@
     <section name="httpAuth" type="HttpAuth.Configuration.HttpAuthSection,HttpAuthenticationModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
   </configSections>
   <httpAuth mode="Basic" realm="Chocolatey Simple Server" xdt:Transform="InsertIfMissing">
+	<!-- The above values have been tested to work. Possible values you can 
+         set (with no guarantees or support):
+         - Mode - {None|Basic|Digest}
+         - Realm - {Plain|Secret|<Pick some value>} 
+      -->
     <credentials source="Inline" passwordFormat="Clear">
+	  <!--The above values have been tested to work. Possible values you can 
+          set (with no guarantees or support):
+          - Source - {Inline|FormsAuthentication|MembershipProvider}
+          - PasswordFormat - {Clear|SHA1|MD5|MD5Digest} - MD5Digest only with Digest mode
+        -->
+      <!-- remove or change this user -->
       <user name="choco" password="rocks" />
       <!-- add users here -->
     </credentials>

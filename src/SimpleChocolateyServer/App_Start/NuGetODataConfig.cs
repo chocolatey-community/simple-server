@@ -25,6 +25,13 @@ namespace SimpleChocolateyServer.App_Start
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
             );
 
+		    config.Routes.MapHttpRoute(
+		        name: "root_upload",
+		        routeTemplate: "api/v2/package",
+		        defaults: new { controller = "PackagesOData", action = "UploadPackage" },
+		        constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Put) }
+		    );
+
         }
     }
 }

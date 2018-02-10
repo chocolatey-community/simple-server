@@ -16,6 +16,13 @@ namespace SimpleChocolateyServer.App_Start
 
             var config = GlobalConfiguration.Configuration;
 
+		    config.Routes.MapHttpRoute(
+		        name: "download_chocolatey_install_script",
+		        routeTemplate: "install.ps1",
+		        defaults: new { controller = "Install", action = "DownloadPowerShellInstallScript" },
+		        constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
+		    );
+
             NuGetV2WebApiEnabler.UseNuGetV2WebApiFeed(config, "ChocolateyDefault", "chocolatey", "PackagesOData");
 
             config.Routes.MapHttpRoute(

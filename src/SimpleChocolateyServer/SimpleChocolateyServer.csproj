@@ -148,6 +148,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\Downloads\" />
     <Folder Include="App_Data\Logs\" />
   </ItemGroup>
   <PropertyGroup>

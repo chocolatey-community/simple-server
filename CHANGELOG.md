@@ -1,5 +1,14 @@
 # Chocolatey Simple Server CHANGELOG
 
+## 0.2.3 (February 11, 2018)
+### FEATURES
+ * Allow installation of Chocolatey with install.ps1 script - [#27](https://github.com/chocolatey/simple-server/issues/27)
+
+### IMPROVEMENTS
+ * Provide instructions on changing apikey versus what setapikey does - [#25](https://github.com/chocolatey/simple-server/issues/25)
+ * Enhance documentation (multiple requests) enhancement - [#26](https://github.com/chocolatey/simple-server/issues/26)
+
+
 ## 0.2.2 (January 11, 2018)
 ### BUG FIXES
  * Fix - Turning on basic auth with HttpAuth Module no longer allows pushing in v0.2x - [#21](https://github.com/chocolatey/simple-server/issues/21)

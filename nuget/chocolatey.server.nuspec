@@ -42,6 +42,15 @@ Chocolatey Server builds on NuGet.Server with a few minor adjustments:
     <releaseNotes>
 Full Release notes at https://github.com/chocolatey/simple-server/blob/master/CHANGELOG.md
 
+## 0.2.3 (February 11, 2018)
+### FEATURES
+ * Allow installation of Chocolatey with install.ps1 script - [#27](https://github.com/chocolatey/simple-server/issues/27)
+
+### IMPROVEMENTS
+ * Provide instructions on changing apikey versus what setapikey does - [#25](https://github.com/chocolatey/simple-server/issues/25)
+ * Enhance documentation (multiple requests) enhancement - [#26](https://github.com/chocolatey/simple-server/issues/26)
+
+
 ## 0.2.2 (January 11, 2018)
 ### BUG FIXES
  * Fix - Turning on basic auth with HttpAuth Module no longer allows pushing in v0.2x - [#21](https://github.com/chocolatey/simple-server/issues/21)
@@ -70,41 +79,6 @@ No longer time out when serving up large-sized packages. This is accomplished by
 ### IMPROVEMENTS
  * Show version of Chocolatey Server on site - [#12](https://github.com/chocolatey/simple-server/issues/12)
  * Manage upgrades and uninstalls gracefully - [#13](https://github.com/chocolatey/simple-server/issues/13)
-
-
-## 0.1.4 (January 2, 2018)
-### BUG FIXES
- * Fix - Turning on basic auth in web.config doesn't allow pushing packages - [#6](https://github.com/chocolatey/simple-server/issues/6)
-
-### IMPROVEMENTS
- * Use Chocolatey icon for favicon
-
-
-## 0.1.3 (October 6, 2017)
-### FEATURES
- * Allow specifying Basic Authentication credentials directly from the web.config file - [#5](https://github.com/chocolatey/simple-server/issues/5)
-
-### IMPROVEMENTS
- * Increase timeout for pushing packages from the default of 110 seconds to 1200
-seconds (20 minutes) - [#3](https://github.com/chocolatey/simple-server/issues/3)
-
-
-## 0.1.2 (November 17, 2016)
-### IMPROVEMENTS
- * Package size allows for 2GB - [#1](https://github.com/chocolatey/simple-server/issues/1)
- * Uses same NuGet enhancements that Chocolatey uses.
-
-
-## 0.1.1 (September 20, 2014)
-### BUG FIXES
- * Small fix to not do anything with respect to making changes.
-
-### IMPROVEMENTS
- * Cleaned up files
-
-
-## 0.1.0 (September 20, 2014)
- * Initial Release
  </releaseNotes>
     <!-- ============================== -->
     <dependencies>

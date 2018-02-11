@@ -47,9 +47,11 @@
       <remove name="TRACEVerbHandler" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
       <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
       <remove name="WebDAV" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+      <add name="PowerShell-Integrated-4.0" path="*.ps1" verb="GET,HEAD" type="System.Web.UI.PageHandlerFactory" modules="ManagedPipelineHandler" preCondition="integratedMode,runtimeVersionv4.0" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
     </handlers>
     <staticContent xdt:Transform="InsertIfMissing">
       <mimeMap fileExtension=".nupkg" mimeType="application/zip" xdt:Locator="Match(fileExtension)" xdt:Transform="InsertIfMissing" />
+      <remove fileExtension=".ps1" xdt:Locator="Match(fileExtension)" xdt:Transform="InsertIfMissing" />
     </staticContent>
     <modules runAllManagedModulesForAllRequests="true" xdt:Transform="InsertIfMissing">
       <remove name="WebDAVModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />

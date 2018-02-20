@@ -128,9 +128,7 @@
     <Content Include="7za.exe" />
     <Content Include="Content\images\MarksUsePolicy.pdf" />
     <None Include="packages.config" />
-    <Content Include="Web.config.install.xdt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Web.config.install.xdt" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\chocolatey.png" />

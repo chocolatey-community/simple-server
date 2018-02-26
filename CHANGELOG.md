@@ -1,5 +1,11 @@
 # Chocolatey Simple Server CHANGELOG
 
+## 0.2.4 (February 26, 2018)
+### BUG FIXES
+ * Fix - install.ps1 - Function Download-Script is called before its definition - [#41](https://github.com/chocolatey/simple-server/issues/41)
+ * Fix - Remove duplicate XDT file - [#39](https://github.com/chocolatey/simple-server/issues/39)
+
+
 ## 0.2.3 (February 11, 2018)
 ### FEATURES
  * Allow installation of Chocolatey with install.ps1 script - [#27](https://github.com/chocolatey/simple-server/issues/27)

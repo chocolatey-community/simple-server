@@ -23,6 +23,13 @@ namespace SimpleChocolateyServer.App_Start
 		        constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
 		    );
 
+		    config.Routes.MapHttpRoute(
+		        name: "downloads",
+		        routeTemplate: "download/{id}",
+		        defaults: new { controller = "Download", action = "DownloadFile" },
+		        constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
+		    );
+
             NuGetV2WebApiEnabler.UseNuGetV2WebApiFeed(config, "ChocolateyDefault", "chocolatey", "PackagesOData");
 
             config.Routes.MapHttpRoute(

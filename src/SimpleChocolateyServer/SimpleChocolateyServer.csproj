@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="7za.exe" />
+    <Content Include="App_Data\Downloads\Readme.txt" />
     <Content Include="Content\images\MarksUsePolicy.pdf" />
     <None Include="packages.config" />
     <Content Include="Web.config.install.xdt">
@@ -143,12 +144,12 @@
       <Link>Properties\SolutionVersion.cs</Link>
     </Compile>
     <Compile Include="App_Start\NuGetODataConfig.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\InstallController.cs" />
     <Compile Include="ForReference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\Downloads\" />
     <Folder Include="App_Data\Logs\" />
   </ItemGroup>
   <PropertyGroup>

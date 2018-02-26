@@ -78,10 +78,6 @@ $searchUrl = '[[URL]][[API_PATH]]/Packages()?$filter=((Id%20eq%20%27chocolatey%2
 $7zipUrl = '[[THIS_URL]]7za.exe'
 $unzipMethod = '7zip'
 
-Write-Output ""Getting latest version of the Chocolatey package for download.""
-[xml]$result = Download-String $searchUrl
-$url = $result.feed.entry.content.src
-
 if ($env:TEMP -eq $null) {
   $env:TEMP = Join-Path $env:SystemDrive 'temp'
 }
@@ -206,6 +202,10 @@ param(
 
   $downloader.DownloadFile($url, $file)
 }
+
+Write-Output ""Getting latest version of the Chocolatey package for download.""
+[xml]$result = Download-String $searchUrl
+$url = $result.feed.entry.content.src
 
 # Download the Chocolatey package
 Write-Output ""Getting Chocolatey from $url.""

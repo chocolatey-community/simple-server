@@ -92,6 +92,7 @@
     <add key="enableFileSystemMonitoring" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
     <add key="enableSimpleMembership" value="false" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
     <add key="forceLocalChocolateyPackage" value="false" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="aspnet:UseHostHeaderForRequestUrl" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
   </appSettings>
   <runtime xdt:Transform="InsertIfMissing">
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1" xdt:Transform="InsertIfMissing">

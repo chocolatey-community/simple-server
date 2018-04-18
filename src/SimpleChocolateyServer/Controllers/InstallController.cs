@@ -17,6 +17,7 @@
 namespace SimpleChocolateyServer.Contollers
 {
     using System;
+    using System.Configuration;
     using System.Net;
     using System.Web;
     using System.Web.Http;
@@ -31,28 +32,34 @@ namespace SimpleChocolateyServer.Contollers
             var url = Request.RequestUri.GetLeftPart(UriPartial.Authority) + VirtualPathUtility.ToAbsolute("~/");
             var apiPath = "chocolatey";
 
-            var localChocolateyPackageFound = false;
+            bool forceLocalChocolateyPackage = false;
+            bool.TryParse(ConfigurationManager.AppSettings.Get("forceLocalChocolateyPackage"), out forceLocalChocolateyPackage);
 
-            //find local package installed
-            var client = new WebClient();
-            var htmlOutput = client.DownloadString(url + apiPath + "/Packages()?$filter=((Id%20eq%20%27chocolatey%27)%20and%20(not%20IsPrerelease))%20and%20IsLatestVersion");
-
-            if (htmlOutput.IndexOf("<content type=\"application/zip\"", 0, StringComparison.OrdinalIgnoreCase) >= 0)
+            if (!forceLocalChocolateyPackage)
             {
-                localChocolateyPackageFound = true;
+                var localChocolateyPackageFound = false;
+
+                //find local package installed
+                var client = new WebClient();
+                var htmlOutput = client.DownloadString(url + apiPath + "/Packages()?$filter=((Id%20eq%20%27chocolatey%27)%20and%20(not%20IsPrerelease))%20and%20IsLatestVersion");
+
+                if (htmlOutput.IndexOf("<content type=\"application/zip\"", 0, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    localChocolateyPackageFound = true;
+                }
+
+                // otherwise use remote Chocolatey location
+                if (!localChocolateyPackageFound)
+                {
+                    url = "https://chocolatey.org/";
+                    apiPath = "api/v2";
+                }
             }
 
-            // otherwise use remote Chocolatey location
-            if (!localChocolateyPackageFound)
-            {
-                url = "https://chocolatey.org/";
-                apiPath = "api/v2";
-            }
-
-            return new PlainTextResult(InstallScript(url, apiPath, thisUrl), Request);
+            return new PlainTextResult(InstallScript(url, apiPath, thisUrl, forceLocalChocolateyPackage), Request);
         }
 
-        public string InstallScript(string url, string apiPath, string thisUrl)
+        public string InstallScript(string url, string apiPath, string thisUrl, bool forceLocalChocolateyPackage)
         {
             return @"# =====================================================================
 # Copyright 2017-2018 Chocolatey Software, Inc, and the
@@ -203,9 +210,15 @@ param(
   $downloader.DownloadFile($url, $file)
 }
 
+
 Write-Output ""Getting latest version of the Chocolatey package for download.""
-[xml]$result = Download-String $searchUrl
-$url = $result.feed.entry.content.src
+$forceLocalChocolateyPackage = [[FORCE_LOCAL_CHOCOLATEY_PACKAGE]]
+if ($forceLocalChocolateyPackage) {
+  $url = ""[[URL]][[API_PATH]]/Packages(Id='chocolatey')/Download""
+} else {
+  [xml]$result = Download-String $searchUrl
+  $url = $result.feed.entry.content.src
+}
 
 # Download the Chocolatey package
 Write-Output ""Getting Chocolatey from $url.""
@@ -297,7 +310,10 @@ $chocoPkgDir = Join-Path $chocoPath 'lib\chocolatey'
 $nupkg = Join-Path $chocoPkgDir 'chocolatey.nupkg'
 if (![System.IO.Directory]::Exists($chocoPkgDir)) { [System.IO.Directory]::CreateDirectory($chocoPkgDir); }
 Copy-Item ""$file"" ""$nupkg"" -Force -ErrorAction SilentlyContinue
-  ".Replace("[[URL]]", url).Replace("[[API_PATH]]", apiPath).Replace("[[THIS_URL]]", thisUrl);
+  ".Replace("[[URL]]", url)
+   .Replace("[[API_PATH]]", apiPath)
+   .Replace("[[THIS_URL]]", thisUrl)
+   .Replace("[[FORCE_LOCAL_CHOCOLATEY_PACKAGE]]", forceLocalChocolateyPackage ? "$true" : "$false");
         }
     }
 }

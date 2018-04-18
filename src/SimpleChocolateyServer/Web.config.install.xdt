@@ -66,10 +66,32 @@
   <location path="api/v2/package" xdt:Locator="Match(path)" xdt:Transform="Remove" />
   <location path="chocolatey" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing" />
   <location path="chocolatey" xdt:Locator="Match(path)" xdt:Transform="Remove" />
+  <location path="install.ps1" inheritInChildApplications="false" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing">
+    <system.web>
+      <authorization>
+        <allow users="?"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="7za.exe" inheritInChildApplications="false" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing">
+    <system.web>
+      <authorization>
+        <allow users="?"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="chocolatey/Packages(Id='chocolatey')/Download" inheritInChildApplications="false" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing">
+    <system.web>
+      <authorization>
+        <allow users="?"/>
+      </authorization>
+    </system.web>
+  </location>
   <appSettings>
     <add key="ignoreSymbolsPackages" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
     <add key="enableFileSystemMonitoring" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
     <add key="enableSimpleMembership" value="false" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="forceLocalChocolateyPackage" value="false" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
   </appSettings>
   <runtime xdt:Transform="InsertIfMissing">
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1" xdt:Transform="InsertIfMissing">

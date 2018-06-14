@@ -1,5 +1,10 @@
 # Chocolatey Simple Server CHANGELOG
 
+## 0.2.5 (June 13, 2018)
+### BUG FIXES
+ * Fix - Basic Auth doesn't allow installing Chocolatey.nupkg from local installation - [#43](https://github.com/chocolatey/simple-server/issues/43)
+
+
 ## 0.2.4 (February 26, 2018)
 ### BUG FIXES
  * Fix - install.ps1 - Function Download-Script is called before its definition - [#41](https://github.com/chocolatey/simple-server/issues/41)

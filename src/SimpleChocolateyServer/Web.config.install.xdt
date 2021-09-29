@@ -110,15 +110,15 @@
       </dependentAssembly>
       <dependentAssembly>
         <assemblyIdentity name="Microsoft.Data.Edm" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
-        <bindingRedirect oldVersion="0.0.0.0-5.8.3.0" newVersion="5.8.3.0" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.8.4.0" newVersion="5.8.4.0" xdt:Transform="InsertIfMissing" />
       </dependentAssembly>
       <dependentAssembly>
         <assemblyIdentity name="Microsoft.Data.OData" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
-        <bindingRedirect oldVersion="0.0.0.0-5.8.3.0" newVersion="5.8.3.0" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.8.4.0" newVersion="5.8.4.0" xdt:Transform="InsertIfMissing" />
       </dependentAssembly>
       <dependentAssembly>
         <assemblyIdentity name="System.Spatial" publicKeyToken="31bf3856ad364e35" culture="neutral" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
-        <bindingRedirect oldVersion="0.0.0.0-5.8.3.0" newVersion="5.8.3.0" xdt:Transform="InsertIfMissing" />
+        <bindingRedirect oldVersion="0.0.0.0-5.8.4.0" newVersion="5.8.4.0" xdt:Transform="InsertIfMissing" />
       </dependentAssembly>
     </assemblyBinding>
   </runtime>

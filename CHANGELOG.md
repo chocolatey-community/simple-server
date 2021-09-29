@@ -1,5 +1,13 @@
 # Chocolatey Simple Server CHANGELOG
 
+## 0.3.0 (September 29, 2021)
+### IMPROVEMENTS
+ * [Security] Moderate severity vulnerability that affects Microsoft.Data.OData (CVE-2018-8269) - see [#62](https://github.com/chocolatey-community/simple-server/issues/62)
+ * [Security] Update 7za to 18.6 - see [#53](https://github.com/chocolatey-community/simple-server/issues/53)
+ * Reorder some information on the Simple Chocolatey Package Repository webpage - see [#37](https://github.com/chocolatey-community/simple-server/issues/37)
+ * Documentation note for viewing feed with Chrome - see [#36](https://github.com/chocolatey-community/simple-server/issues/36)
+
+
 ## 0.2.5 (June 13, 2018)
 ### BUG FIXES
  * Fix - Basic Auth doesn't allow installing Chocolatey.nupkg from local installation - [#43](https://github.com/chocolatey/simple-server/issues/43)

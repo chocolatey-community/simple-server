@@ -33,15 +33,15 @@
             <% if (string.IsNullOrEmpty(ConfigurationManager.AppSettings["apiKey"])) { %>
                 To enable <a href="https://chocolatey.org/docs/commands-push">pushing packages</a> to this repository using the <a href="https://chocolatey.org/">Chocolatey command line tool</a> (choco.exe), set the <code>apiKey</code> appSetting in web.config.
             <% } else { %>
+                To add the <a href="https://chocolatey.org/docs/commands-apikey">package push API key</a> to the client machines you use for packaging, use the following:
+                <blockquote>
+                    <strong>choco apikey --source="<%= Helpers.GetPushUrl(Request.Url, Request.ApplicationPath) %>" --api-key={apikey}</strong>
+                </blockquote>
                 Use the command below to <a href="https://chocolatey.org/docs/commands-push">push packages to this repository</a>:
                 <blockquote>
                     <strong>choco push [{package file}] --source <%= Helpers.GetPushUrl(Request.Url, Request.ApplicationPath) %> [--api-key={apikey}]</strong>
                 </blockquote>
-                To add the <a href="https://chocolatey.org/docs/commands-apikey">package push API key</a> to the client machines you use for packaging, use the following:
-                <blockquote>
-                    <strong>choco apikey --source="<%= Helpers.GetPushUrl(Request.Url, Request.ApplicationPath) %>" --api-key={apikey}</strong>
-                </blockquote>  
-            <% } %> 
+            <% } %>
 
             <h3>Installing Chocolatey On Client Machines</h3>
             <ul>

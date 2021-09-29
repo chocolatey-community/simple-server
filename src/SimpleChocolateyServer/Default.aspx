@@ -14,7 +14,10 @@
         <h2>You are running a Simple Chocolatey Package Repository v<%= typeof(ForReference).Assembly.GetName().Version %></h2>
         <img src="<%= VirtualPathUtility.ToAbsolute("~/Content/images/chocolatey.png") %>" width="80" height="80" alt="chocolatey logo" />
         <p>
-            View your <a href="<%= VirtualPathUtility.ToAbsolute("~/chocolatey/Packages") %>">packages</a> (Atom-based feed, will show up differently in different browsers). To interact with this repository, you will be using Chocolatey from client machines.
+            View your <a href="<%= VirtualPathUtility.ToAbsolute("~/chocolatey/Packages") %>">packages</a> (Atom-based feed, will show up differently in different browsers. Some will show it as raw XML, while others will understand the contents and render it in a nicely formatted structure. Depending on your browser, there may be extensions that can help with the rendering of the content).
+        </p>
+        <p>
+            To interact with this repository, you will be using Chocolatey from client machines.
         </p>
         <fieldset style="width:800px">
             <legend><strong>Information</strong></legend>

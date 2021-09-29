@@ -5,7 +5,7 @@
     <id>chocolatey.server</id>
     <version>0.0.0</version>
     <owners>Rob Reynolds</owners>
-    <packageSourceUrl>https://github.com/chocolatey-community/simple-server/tree/master/nuget</packageSourceUrl>
+    <!--<packageSourceUrl>https://github.com/chocolatey-community/simple-server/tree/master/nuget</packageSourceUrl>-->
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
@@ -16,9 +16,9 @@
     <copyright>2017 - Present Chocolatey Software, Inc. 2014 - 2017 RealDimensions Software, LLC</copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/chocolatey-community/simple-server/</projectSourceUrl>
-    <docsUrl>https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server</docsUrl>
-    <bugTrackerUrl>https://github.com/chocolatey-community/simple-server/issues</bugTrackerUrl>
+    <!--<projectSourceUrl>https://github.com/chocolatey-community/simple-server/</projectSourceUrl>-->
+    <!--<docsUrl>https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server</docsUrl>-->
+    <!--<bugTrackerUrl>https://github.com/chocolatey-community/simple-server/issues</bugTrackerUrl>-->
     <tags>nuget odata iis repository chocolatey simple-server simple.server</tags>
     <summary>Chocolatey Server is a simple OData feed built on top of NuGet.Server.</summary>
     <description>Chocolatey Server is a simple OData feed built on top of NuGet.Server.

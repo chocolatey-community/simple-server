@@ -5,20 +5,20 @@
     <id>chocolatey.server</id>
     <version>0.0.0</version>
     <owners>Rob Reynolds</owners>
-    <!-- <packageSourceUrl>https://github.com/chocolatey/simple-server</packageSourceUrl>-->
+    <packageSourceUrl>https://github.com/chocolatey-community/simple-server/tree/master/nuget</packageSourceUrl>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>Chocolatey Server (Simple)</title>
     <authors>Rob Reynolds</authors>
-    <projectUrl>https://github.com/chocolatey/simple-server/</projectUrl>
+    <projectUrl>https://github.com/chocolatey-community/simple-server/</projectUrl>
     <iconUrl>https://github.com/chocolatey/choco/raw/master/docs/logo/chocolateyicon.gif</iconUrl>
-    <copyright>2017 - 2018 Chocolatey Software, Inc. 2014 - 2017 RealDimensions Software, LLC</copyright>
+    <copyright>2017 - Present Chocolatey Software, Inc. 2014 - 2017 RealDimensions Software, LLC</copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!--<projectSourceUrl>https://github.com/chocolatey/simple-server/</projectSourceUrl>-->
-    <!--<docsUrl>https://chocolatey.org/docs/how-to-set-up-chocolatey-server</docsUrl>-->
-    <!--<bugTrackerUrl>https://github.com/chocolatey/simple-server/issues</bugTrackerUrl>-->
+    <projectSourceUrl>https://github.com/chocolatey-community/simple-server/</projectSourceUrl>
+    <docsUrl>https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server</docsUrl>
+    <bugTrackerUrl>https://github.com/chocolatey-community/simple-server/issues</bugTrackerUrl>
     <tags>nuget odata iis repository chocolatey simple-server simple.server</tags>
     <summary>Chocolatey Server is a simple OData feed built on top of NuGet.Server.</summary>
     <description>Chocolatey Server is a simple OData feed built on top of NuGet.Server.
@@ -34,63 +34,22 @@ Chocolatey Server builds on NuGet.Server with a few minor adjustments:
 
 ### Links
 
-* Setup - https://chocolatey.org/docs/how-to-set-up-chocolatey-server
-* Source Code - https://github.com/chocolatey/simple-server/
-* Issues/Requests - https://github.com/chocolatey/simple-server/issues
+* Setup - https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server
+* Source Code - https://github.com/chocolatey-community/simple-server/
+* Issues/Requests - https://github.com/chocolatey-community/simple-server/issues
 
-</description>
+### Notes
+
+This package will NOT give you a local copy of what is available on https://community.chocolatey.org.
+
+Chocolatey.Server is not recommended for most organizational use cases. There are more robust options out there. However
+if you have a very simple use case or are conducting a POC, Chocolatey.Server may be good enough for your needs. If you
+don't find it robust enough, our recommendation is to look to something more robust like Artifactory, Nexus, or ProGet
+(two of which are also free to use).
+    </description>
     <releaseNotes>
-Full Release notes at https://github.com/chocolatey/simple-server/blob/master/CHANGELOG.md
-
-## 0.2.5 (June 13, 2018)
-### BUG FIXES
- * Fix - Basic Auth doesn't allow installing Chocolatey.nupkg from local installation - [#43](https://github.com/chocolatey/simple-server/issues/43)
-
-
-## 0.2.4 (February 26, 2018)
-### BUG FIXES
- * Fix - install.ps1 - Function Download-Script is called before its definition - [#41](https://github.com/chocolatey/simple-server/issues/41)
- * Fix - Remove duplicate XDT file - [#39](https://github.com/chocolatey/simple-server/issues/39)
-
-
-## 0.2.3 (February 11, 2018)
-### FEATURES
- * Allow installation of Chocolatey with install.ps1 script - [#27](https://github.com/chocolatey/simple-server/issues/27)
-
-### IMPROVEMENTS
- * Provide instructions on changing apikey versus what setapikey does - [#25](https://github.com/chocolatey/simple-server/issues/25)
- * Enhance documentation (multiple requests) enhancement - [#26](https://github.com/chocolatey/simple-server/issues/26)
-
-
-## 0.2.2 (January 11, 2018)
-### BUG FIXES
- * Fix - Turning on basic auth with HttpAuth Module no longer allows pushing in v0.2x - [#21](https://github.com/chocolatey/simple-server/issues/21)
- * Fix - Pushing to default url is missing in v0.2.x - [#20](https://github.com/chocolatey/simple-server/issues/20)
-
-
-## 0.2.1 (January 8, 2018)
-### BUG FIXES
- * Fix - New installation doesn't copy subfolders and files - [#18](https://github.com/chocolatey/simple-server/issues/18)
-
-
-## 0.2.0 (January 4, 2018)
-### BREAKING CHANGES
- * Require .NET Framework 4.6.x - [#14](https://github.com/chocolatey/simple-server/issues/14)
-
-To use the same caching techniques mentioned below in [#10](https://github.com/chocolatey/simple-server/issues/10), we needed to upgrade to the same version of the .NET Framework that was being used by NuGet.Server. That means you need to take some extra steps of ensuring that your ASP.NET has .NET 4.6+ registered so that files are served properly.
-
-### FEATURES
- * Use same caching techniques as NuGet.Server v3x+ (NuGet v3.4.x+) - [#10](https://github.com/chocolatey/simple-server/issues/10)
-
-No longer time out when serving up large-sized packages. This is accomplished by pulling the items out of packages ahead of time that are necessary when serving information.
-
-### BUG FIXES
- * Fix - Uploading large package results in System.OutOfMemoryException - [#15](https://github.com/chocolatey/simple-server/issues/15)
-
-### IMPROVEMENTS
- * Show version of Chocolatey Server on site - [#12](https://github.com/chocolatey/simple-server/issues/12)
- * Manage upgrades and uninstalls gracefully - [#13](https://github.com/chocolatey/simple-server/issues/13)
- </releaseNotes>
+Full Release notes at https://github.com/chocolatey-community/simple-server/blob/master/CHANGELOG.md
+    </releaseNotes>
     <!-- ============================== -->
     <dependencies>
       <dependency id="dotnet4.6" />
